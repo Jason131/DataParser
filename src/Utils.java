@@ -40,7 +40,6 @@ public class Utils {
 
             ElectionResult test = new ElectionResult(Double.parseDouble(temp[1]), Double.parseDouble(temp[2]), Double.parseDouble(temp[3]), Double.parseDouble(temp[4]), Double.parseDouble(temp[5]), temp[6], temp[7], temp[8], temp[9], Integer.parseInt(temp[10]));
             result.add(test);
-            System.out.println();
         }
 
         return result;
