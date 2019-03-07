@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Utils {
+    private static ArrayList<ElectionResult> result = new ArrayList<>();
+
     public static String readFileAsString(String filepath) {
         StringBuilder output = new StringBuilder();
 
@@ -21,7 +23,6 @@ public class Utils {
     }
 
     public static ArrayList<ElectionResult> parse2016ElectionResults(String data) {
-        ArrayList<ElectionResult> result = new ArrayList<>();
         String[] lines = data.split("\n");
 
         for (int i = 1; i < lines.length; i++) {
@@ -45,4 +46,5 @@ public class Utils {
         return result;
 
     }
+
 }
