@@ -12,6 +12,7 @@ public class Main {
     private List<State> states;
 
     public static void main(String[] args) {
+        states.
         String data = Utils.readFileAsString("data/2016_Presidential_Results.csv");
         Utils.parseElection2016(data);
 
@@ -20,7 +21,6 @@ public class Main {
 
         data = Utils.readFileAsString("data/Unemployment.csv");
         Utils.parseEmployment2016(data);
-
-
     }
+
 }

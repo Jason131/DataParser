@@ -1,10 +1,12 @@
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Utils {
     private static ArrayList<ElectionResult> result = new ArrayList<>();
+    private List<State> states;
 
     public static String readFileAsString(String filepath) {
         StringBuilder output = new StringBuilder();
@@ -47,4 +49,7 @@ public class Utils {
 
     }
 
+    public static void parseElection2016(String data) {
+
+    }
 }
