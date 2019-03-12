@@ -10,6 +10,10 @@ public class State {
         counties = new ArrayList<County>();
     }
 
+    public State getState(State s) {
+        return s;
+    }
+
     public void addCounty(County c) {
         counties.add(c);
     }
@@ -37,4 +41,5 @@ public class State {
     public void setCounties(List<County> counties) {
         this.counties = counties;
     }
+
 }

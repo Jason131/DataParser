@@ -5,8 +5,9 @@ public class County {
     private Education2016 educ2016;
     private Employment2016 employ2016;
 
-    public County(String name) {
+    public County(String name, int fips) {
         this.name = name;
+        this.fips = fips;
     }
 
     public String getName() {

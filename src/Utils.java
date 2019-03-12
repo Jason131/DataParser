@@ -49,7 +49,44 @@ public class Utils {
 
     }
 
-    public static void parseElection2016(String data) {
+    public static void parseElection2016(List<State> states, String data) {
+        String[] lines = data.split("\n");
+        String[] temp;
 
+        for (int i = 1; i < lines.length; i++) {
+            cleanData(lines[i]);
+            temp = lines[i].split(",");
+
+            String stateName = temp[8];
+            State s = getState(stateName, states);
+            if (s == null) states.add(s);
+
+            String countyName = temp[9];
+            County c = getCounty(countyName, states);
+            if(c == null) states.get(s).addCounty(c);
+
+            County county = new County(temp[9], Integer.parseInt(temp[10]));
+            Election2016 values = new Election2016(Double.parseDouble(temp[1]), Double.parseDouble(temp[2]), Double.parseDouble(temp[3]));
+
+            states.get(s).addCounty(county);
+            states.get(s).getCounty(county).setVote2016(values);
+        }
+
+    }
+
+    private static County getCounty(String countyName, List<State> states) {
+        for (State s:states) {
+            for (County c : s.getCounties()) {
+                if (c.getName().equals(countyName)) return c;
+            }
+        }
+        return null;
+    }
+
+    private static State getState(String stateName, List<State> states) {
+        for (State s:states) {
+            if(s.getName().equals(stateName)) return s;
+        }
+        return null;
     }
 }
